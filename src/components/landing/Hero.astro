@@ -1,0 +1,40 @@
+---
+import { ArrowRight, ChevronDown } from 'lucide-react';
+---
+
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-ergo-green/10 rounded-full blur-3xl mix-blend-multiply animate-pulse"></div>
+        <div class="absolute top-40 right-10 w-96 h-96 bg-blue-100 rounded-full blur-3xl mix-blend-multiply"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-ergo-dark tracking-tight mb-6 leading-tight">
+            L’ergonomie, <br class="hidden md:block" />
+            <span class="text-ergo-green">simplifiée</span>, perfectionnée.
+        </h1>
+
+        <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 mb-10">
+            Rejoins l'équipe <span class="font-bold text-ergo-dark">ErgoSix</span>
+             afin d'éradiquer les TMS en entreprise grâce à l'IA !
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+                href="https://tally.so/r/Y50kAd"
+                target="_blank"
+                class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-white bg-ergo-green hover:bg-[#2d6335] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+                Rejoindre l'aventure
+                <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+            <a
+                href="#problem"
+                class="inline-flex items-center justify-center px-8 py-4 border border-gray-200 text-base font-bold rounded-xl text-gray-700 bg-white hover:bg-gray-50 transition-all shadow-sm hover:shadow-md"
+            >
+                En savoir plus
+            </a>
+        </div>
+    </div>
+</section>

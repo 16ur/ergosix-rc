@@ -1,0 +1,68 @@
+---
+const steps = [
+    {
+        phase: "Phase 1",
+        title: "R&D & Preprocessing",
+        desc: "Constitution des datasets, choix des technologies, annotation des données et entraînement initial des modèles IA.",
+        date: "S1 2026"
+    },
+    {
+        phase: "Phase 2",
+        title: "Développement Core",
+        desc: "Architecture Backend, API, et entraînement intensif des modèles IA.",
+        date: "S2 2026"
+    },
+    {
+        phase: "Phase 3",
+        title: "Interface & Mobile",
+        desc: "Développement du Dashboard 2D interactif et de l'application mobile compagnon.",
+        date: "2027"
+    },
+    {
+        phase: "Phase 4",
+        title: "Mise en Prod",
+        desc: "Déploiement, Beta-tests en conditions réelles, itérations et scaling.",
+        date: "2027"
+    }
+];
+---
+
+<section id="roadmap" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-ergo-dark sm:text-4xl">Roadmap</h2>
+            <p class="mt-4 text-lg text-gray-600">Notre vision sur 2 ans.</p>
+        </div>
+
+        <div class="relative">
+            <!-- Vertical Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
+
+            <div class="space-y-12">
+                {steps.map((step, index) => (
+                    <div class={`relative flex items-center justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+                        <!-- Content -->
+                        <div class="w-[45%] mb-4 md:mb-0">
+                            <div class={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                                <span class="inline-block px-3 py-1 bg-ergo-green/10 text-ergo-green text-xs font-bold rounded-full mb-2">
+                                    {step.phase}
+                                </span>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">{step.title}</h3>
+                                <p class="text-sm text-gray-500 mb-2 font-mono">{step.date}</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    {step.desc}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Dot -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-ergo-green rounded-full border-4 border-white shadow-md z-10"></div>
+
+                        <!-- Spacer -->
+                        <div class="w-[45%]"></div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

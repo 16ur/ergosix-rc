@@ -1,0 +1,50 @@
+---
+import Logo from './ui/Logo.astro';
+import { Menu } from 'lucide-react';
+
+const links = [
+  { name: "Le Projet", href: "#problem" },
+  { name: "La Solution", href: "#solution" },
+  { name: "Roadmap", href: "#roadmap" },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="flex items-center">
+          <Logo className="h-8 w-auto" />
+        </a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8">
+        {links.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-gray-600 hover:text-ergo-green transition-colors">
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center">
+        <a
+          href="https://tally.so/r/Y50kAd"
+          target="_blank"
+          class="bg-ergo-green text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#2d6335] transition-colors shadow-sm"
+        >
+          Postuler
+        </a>
+      </div>
+
+      <!-- Mobile menu button (placeholder functionality) -->
+      <div class="md:hidden flex items-center">
+        <button class="text-gray-500 hover:text-gray-700">
+          <Menu className="w-6 h-6" />
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

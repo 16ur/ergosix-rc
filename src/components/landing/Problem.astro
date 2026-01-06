@@ -1,0 +1,52 @@
+---
+import { Activity, AlertCircle, BrainCircuit } from 'lucide-react';
+
+const stats = [
+    {
+        value: "86%",
+        label: "des salariés",
+        description: "souffrent de troubles musculo-squelettiques au cours de leur carrière.",
+        icon: Activity,
+        color: "text-red-500",
+        bg: "bg-red-50"
+    },
+    {
+        value: "58%",
+        label: "des employés",
+        description: "décrivent des douleurs cervicales régulières liées au poste de travail.",
+        icon: AlertCircle,
+        color: "text-orange-500",
+        bg: "bg-orange-50"
+    },
+    {
+        value: "IA & Data",
+        label: "La Réponse",
+        description: "Une approche technologique pour prévenir plutôt que guérir.",
+        icon: BrainCircuit,
+        color: "text-ergo-green",
+        bg: "bg-green-50"
+    }
+];
+---
+
+<section id="problem" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-ergo-dark sm:text-4xl">Le Problème</h2>
+            <p class="mt-4 text-lg text-gray-600">Pourquoi nous avons besoin de vous.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {stats.map((stat) => (
+                <div class="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow bg-white">
+                    <div class={`w-12 h-12 rounded-xl ${stat.bg} ${stat.color} flex items-center justify-center mb-6`}>
+                        <stat.icon className="w-6 h-6" />
+                    </div>
+                    <p class={`text-4xl font-extrabold ${stat.color} mb-2`}>{stat.value}</p>
+                    <p class="font-semibold text-gray-900 mb-2">{stat.label}</p>
+                    <p class="text-gray-500 leading-relaxed">{stat.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
