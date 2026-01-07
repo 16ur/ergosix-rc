@@ -17,18 +17,19 @@ const features = [
         iconClass: "text-blue-500"
     },
     {
-        title: "Crit'Ergo",
-        desc: "Algorithme propriétaire de scoring de santé d'entreprise.",
-        icon: HeartPulse,
-        class: "md:col-span-1 bg-white border border-gray-100",
-        iconClass: "text-red-500"
-    },
-    {
         title: "Mobile App",
         desc: "Notifications et routines d'étirements personnalisées pour l'employé.",
         icon: Smartphone,
-        class: "md:col-span-2 bg-ergo-green/5 border border-ergo-green/10",
+        class: "md:col-span-1 bg-ergo-green/5 border border-ergo-green/10",
         iconClass: "text-ergo-green"
+    },
+    {
+        title: "Crit'Ergo",
+        desc: "Algorithme propriétaire de scoring de santé d'entreprise.\
+        Score calculé selon la satisfaction des employés, l'assiduité des routines bien-être, et les efforts fournis par l'entreprise.",
+        logo: "/Critergo.svg",
+        class: "md:col-span-2 bg-white border border-gray-100",
+        iconClass: "text-red-500"
     }
 ];
 ---
@@ -46,12 +47,18 @@ const features = [
             {features.map((feature) => (
                 <div class={`rounded-3xl p-8 flex flex-col justify-between shadow-sm transition-transform hover:-translate-y-1 ${feature.class}`}>
                     <div class="mb-4">
-                        <feature.icon className={`w-8 h-8 ${feature.iconClass}`} />
+                        {feature.logo ? (
+                            <img src={feature.logo} alt={feature.title} class="w-96 h-full m-auto" />
+                        ) : (
+                            <feature.icon className={`w-8 h-8 ${feature.iconClass}`} />
+                        )}
                     </div>
                     <div>
-                        <h3 class={`text-xl font-bold mb-2 ${feature.class.includes('text-white') ? 'text-white' : 'text-gray-900'}`}>
-                            {feature.title}
-                        </h3>
+                        {!feature.logo && (
+                            <h3 class={`text-xl font-bold mb-2 ${feature.class.includes('text-white') ? 'text-white' : 'text-gray-900'}`}>
+                                {feature.title}
+                            </h3>
+                        )}
                         <p class={`text-sm leading-relaxed ${feature.class.includes('text-white') ? 'text-gray-300' : 'text-gray-500'}`}>
                             {feature.desc}
                         </p>
