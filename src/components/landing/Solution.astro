@@ -1,5 +1,6 @@
 ---
 import { LayoutTemplate, Smartphone } from 'lucide-react';
+import AnimatedWave from './AnimatedWave.astro';
 
 const features = [
     {
@@ -21,17 +22,17 @@ const features = [
         title: "Mobile App",
         desc: "Notifications et routines d'étirements personnalisées pour l'employé.",
         icon: Smartphone,
-        class: "md:col-span-1 bg-ergo-green/5 border border-ergo-green/10",
+        class: "md:col-span-1 bg-ergo-slate border border-ergo-green/10",
         iconClass: "text-ergo-green"
     }
 ];
 ---
 
-<section id="solution" class="py-20 bg-ergo-slate">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="solution" class="relative py-10 bg-ergo-green">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div class="mb-12">
-            <h2 class="text-3xl font-bold text-ergo-dark sm:text-4xl">La Solution</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">La Solution</h2>
+            <p class="mt-4 text-lg text-emerald-100 max-w-2xl">
                 Un écosystème complet pour l'ergonomie au travail.
             </p>
         </div>
@@ -52,7 +53,7 @@ const features = [
                                 {feature.title}
                             </h3>
                         )}
-                        <p class={`text-sm leading-relaxed ${feature.class.includes('text-white') ? 'text-gray-300' : 'text-gray-500'}`}>
+                        <p class={`text-sm leading-relaxed ${feature.class.includes('text-white') ? 'text-emerald-50' : 'text-gray-500'}`}>
                             {feature.desc}
                         </p>
                     </div>
@@ -60,4 +61,5 @@ const features = [
             ))}
         </div>
     </div>
+    <AnimatedWave fillColor="#f8fafc" position="bottom" />
 </section>

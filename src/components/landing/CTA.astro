@@ -1,8 +1,9 @@
 ---
 import { Rocket } from 'lucide-react';
+import AnimatedWave from './AnimatedWave.astro';
 ---
 
-<section class="py-24 bg-ergo-dark relative overflow-hidden">
+<section class="relative py-14 bg-ergo-dark overflow-hidden">
     <!-- Decorative background -->
     <div class="absolute inset-0 opacity-10">
         <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -21,10 +22,11 @@ import { Rocket } from 'lucide-react';
         <a
             href="https://tally.so/r/Y50kAd"
             target="_blank"
-            class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-lg font-bold rounded-2xl text-ergo-dark bg-white hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl"
+            class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-lg font-bold rounded-2xl text-ergo-dark bg-ergo-green hover:bg-[#2d6335] transition-all transform hover:scale-105 shadow-2xl"
         >
-            <Rocket className="mr-3 w-6 h-6 text-ergo-green" />
+            <Rocket className="mr-3 w-6 h-6 text-white" />
             Candidater maintenant
         </a>
     </div>
+    <!-- <AnimatedWave fillColor="#f8fafc" position="bottom" /> -->
 </section>
