@@ -1,12 +1,20 @@
 ---
-import { LayoutTemplate, HeartPulse, Smartphone } from 'lucide-react';
+import { LayoutTemplate, Smartphone } from 'lucide-react';
 
 const features = [
+    {
+        title: "Crit'Ergo",
+        desc: "Algorithme propriétaire de scoring de santé d'entreprise.\
+        Score calculé selon la satisfaction des employés, l'assiduité des routines bien-être, et les efforts fournis par l'entreprise.",
+        logo: "/Critergo.svg",
+        class: "md:col-span-2 md:row-span-2 bg-white border border-gray-100",
+        iconClass: "text-red-500"
+    },
     {
         title: "Interface Plan 2D",
         desc: "Modélisation des bureaux et heatmaps pour les gestionnaires de flotte.",
         icon: LayoutTemplate,
-        class: "md:col-span-2 md:row-span-2 bg-gradient-to-br from-ergo-dark to-[#1a252f] text-white",
+        class: "md:col-span-1 bg-gradient-to-br from-ergo-dark to-[#1a252f] text-white",
         iconClass: "text-blue-500"
     },
     {
@@ -15,14 +23,6 @@ const features = [
         icon: Smartphone,
         class: "md:col-span-1 bg-ergo-green/5 border border-ergo-green/10",
         iconClass: "text-ergo-green"
-    },
-    {
-        title: "Crit'Ergo",
-        desc: "Algorithme propriétaire de scoring de santé d'entreprise.\
-        Score calculé selon la satisfaction des employés, l'assiduité des routines bien-être, et les efforts fournis par l'entreprise.",
-        logo: "/Critergo.svg",
-        class: "md:col-span-2 bg-white border border-gray-100",
-        iconClass: "text-red-500"
     }
 ];
 ---
@@ -39,9 +39,9 @@ const features = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
             {features.map((feature) => (
                 <div class={`rounded-3xl p-8 flex flex-col justify-between shadow-sm transition-transform hover:-translate-y-1 ${feature.class}`}>
-                    <div class="mb-4">
+                    <div class={feature.logo ? 'flex items-center justify-center flex-grow' : 'mb-4'}>
                         {feature.logo ? (
-                            <img src={feature.logo} alt={feature.title} class="w-96 h-full m-auto" />
+                            <img src={feature.logo} alt={feature.title} class="w-full max-w-lg h-auto" />
                         ) : (
                             <feature.icon className={`w-8 h-8 ${feature.iconClass}`} />
                         )}
