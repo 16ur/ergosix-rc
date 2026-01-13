@@ -1,19 +1,12 @@
 ---
-import { ScanFace, LayoutTemplate, HeartPulse, Smartphone } from 'lucide-react';
+import { LayoutTemplate, HeartPulse, Smartphone } from 'lucide-react';
 
 const features = [
-    {
-        title: "Détection Ergonomique",
-        desc: "Analyse posturale par webcam en temps réel (Privacy first). Détection des angles à risque.",
-        icon: ScanFace,
-        class: "md:col-span-2 md:row-span-2 bg-gradient-to-br from-ergo-dark to-[#1a252f] text-white",
-        iconClass: "text-ergo-green"
-    },
     {
         title: "Interface Plan 2D",
         desc: "Modélisation des bureaux et heatmaps pour les gestionnaires de flotte.",
         icon: LayoutTemplate,
-        class: "md:col-span-1 bg-white border border-gray-100",
+        class: "md:col-span-2 md:row-span-2 bg-gradient-to-br from-ergo-dark to-[#1a252f] text-white",
         iconClass: "text-blue-500"
     },
     {
@@ -43,7 +36,7 @@ const features = [
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
             {features.map((feature) => (
                 <div class={`rounded-3xl p-8 flex flex-col justify-between shadow-sm transition-transform hover:-translate-y-1 ${feature.class}`}>
                     <div class="mb-4">
